@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 
+export function getTreePath (props, context) {
+  return context.treePath ? context.treePath + '/' + props.id : props.id
+}
+
 export default function treePath () {
   return Component => {
     class TreePath extends Component {
@@ -16,25 +20,11 @@ export default function treePath () {
       }
 
       componentWillMount () {
-        this.setState({
-          treePath: this.getTreePath(this.props, this.context),
-        })
+        this.componentWillReceiveProps(this.props, this.context)
       }
 
       componentWillReceiveProps (nextProps, nextContext) {
-        this.setState({
-          treePath: this.getTreePath(nextProps, nextContext),
-        })
-      }
-
-      getTreePath = (props, context) => {
-        let id = props.id
-
-        if (context.treePath) {
-          id = context.treePath + '/' + id
-        }
-
-        return id
+        this.setState({treePath: getTreePath(nextProps, nextContext)})
       }
 
       render () {
