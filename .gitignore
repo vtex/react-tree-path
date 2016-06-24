@@ -32,3 +32,4 @@ docs/_book/
 .idea
 npm-debug.log
 storefront/assets/**/*
+.nyc_output/
