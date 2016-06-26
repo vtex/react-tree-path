@@ -33,3 +33,5 @@ docs/_book/
 npm-debug.log
 storefront/assets/**/*
 .nyc_output/
+
+lib/
