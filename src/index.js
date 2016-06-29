@@ -9,14 +9,16 @@ export default function treePath () {
     class TreePath extends Component {
       static contextTypes = {
         treePath: React.PropTypes.string,
+        store: React.PropTypes.object,
       }
 
       static childContextTypes = {
         treePath: React.PropTypes.string,
+        store: React.PropTypes.object,
       }
 
       getChildContext () {
-        return { treePath: this.state.treePath }
+        return { treePath: this.state.treePath, store: this.context.store }
       }
 
       componentWillMount () {
