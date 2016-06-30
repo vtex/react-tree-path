@@ -21,7 +21,7 @@ MyComponent.propTypes = {
   treePath: PropTypes.string,
 }
 
-const TreePathComponent = treePath()(MyComponent)
+const TreePathComponent = treePath(MyComponent)
 
 test('Finds path with only one rendered element', t => {
   const wrapper = render(<TreePathComponent id="tree" />)
