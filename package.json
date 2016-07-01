@@ -4,11 +4,11 @@
   "description": "React decorator to uniquely identify components in a render tree.",
   "main": "lib/index.js",
   "scripts": {
-    "watch": "babel src --out-dir=lib --watch",
+    "watch": "babel src --out-dir=lib --watch --ignore=src/test.js",
     "lint": "eslint src",
     "test": "npm run lint && nyc ava src/test.js",
     "test-watch": "ava src/test.js --watch",
-    "prepublish": "babel src --out-dir=lib --ignore=test.js",
+    "prepublish": "babel src --out-dir=lib --ignore=src/test.js",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "ava": {
@@ -17,10 +17,9 @@
     ],
     "babel": "inherit"
   },
-  "engines": {
-    "node": ">=0.12.0"
+  "dependencies": {
+    "react": "^15.1.0"
   },
-  "dependencies": {},
   "devDependencies": {
     "ava": "^0.15.0",
     "babel-core": "^6.10.4",
@@ -34,7 +33,6 @@
     "eslint-config-vtex": "^4.0.0",
     "eslint-config-vtex-react": "^1.0.2",
     "nyc": "^6.4.4",
-    "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0"
   }
