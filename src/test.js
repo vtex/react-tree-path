@@ -1,5 +1,6 @@
 import test from 'ava'
-import React, {Component, PropTypes} from 'react'
+import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import { render } from 'enzyme'
 import treePath from './index.js'
 
@@ -16,7 +17,7 @@ class MyComponent extends Component {
 }
 
 MyComponent.propTypes = {
-  children: React.PropTypes.array,
+  children: PropTypes.array,
   id: PropTypes.string,
   treePath: PropTypes.string,
 }

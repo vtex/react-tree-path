@@ -18,7 +18,8 @@
     "babel": "inherit"
   },
   "dependencies": {
-    "react": "^15.1.0"
+    "react": "^15.1.0",
+    "prop-types": "^15.1.0"
   },
   "devDependencies": {
     "ava": "^0.15.0",
