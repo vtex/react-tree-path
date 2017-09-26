@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 function getDisplayName (WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component'
@@ -29,8 +30,8 @@ export default function treePath (WrappedComponent) {
     }
   }
 
-  TreePath.contextTypes = { treePath: React.PropTypes.string }
-  TreePath.childContextTypes = { treePath: React.PropTypes.string }
+  TreePath.contextTypes = { treePath: PropTypes.string }
+  TreePath.childContextTypes = { treePath: PropTypes.string }
   TreePath.WrappedComponent = WrappedComponent
   TreePath.displayName = `TreePath(${getDisplayName(WrappedComponent)})`
 
