@@ -17,24 +17,30 @@
     ],
     "babel": "inherit"
   },
-  "dependencies": {
-    "react": "^15.1.0",
-    "prop-types": "^15.1.0"
+  "peerDependencies": {
+    "prop-types": "^15.0.0",
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
-    "ava": "^0.15.0",
+    "ava": "^0.23.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.10.4",
-    "babel-eslint": "^6.1.0",
+    "babel-eslint": "^8.0.2",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
-    "coveralls": "^2.11.9",
-    "enzyme": "^2.3.0",
-    "eslint": "^2.12.0",
-    "eslint-config-vtex": "^4.0.0",
-    "eslint-config-vtex-react": "^1.0.2",
-    "nyc": "^6.4.4",
-    "react-addons-test-utils": "^15.1.0",
-    "react-dom": "^15.1.0"
-  }
+    "coveralls": "^3.0.0",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "eslint": "^4.12.0",
+    "eslint-config-vtex": "^7.0.0",
+    "eslint-config-vtex-react": "^3.0.3",
+    "nyc": "^11.3.0",
+    "prop-types": "^15.0.0",
+    "react": "^16.1.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.1.1"
+  },
+  "license": "MIT"
 }

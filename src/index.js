@@ -1,29 +1,29 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-function getDisplayName (WrappedComponent) {
+function getDisplayName(WrappedComponent) {
   return WrappedComponent.displayName || WrappedComponent.name || 'Component'
 }
 
-export function getTreePath (props, context) {
-  return context.treePath ? context.treePath + '/' + props.id : props.id
+export function getTreePath(props, context) {
+  return context.treePath ? `${context.treePath}/${props.id}` : props.id
 }
 
-export default function treePath (WrappedComponent) {
+export default function treePath(WrappedComponent) {
   class TreePath extends Component {
-    getChildContext () {
+    getChildContext() {
       return { treePath: this.state.treePath }
     }
 
-    componentWillMount () {
+    componentWillMount() {
       this.componentWillReceiveProps(this.props, this.context)
     }
 
-    componentWillReceiveProps (nextProps, nextContext) {
-      this.setState({treePath: getTreePath(nextProps, nextContext)})
+    componentWillReceiveProps(nextProps, nextContext) {
+      this.setState({ treePath: getTreePath(nextProps, nextContext) })
     }
 
-    render () {
+    render() {
       return (
         <WrappedComponent {...this.props} treePath={this.state.treePath} />
       )

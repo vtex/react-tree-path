@@ -1,12 +1,16 @@
 import test from 'ava'
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { render } from 'enzyme'
+import Enzyme, { render } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+
 import treePath from './index.js'
+
+Enzyme.configure({ adapter: new Adapter() })
 
 // eslint-disable-next-line
 class MyComponent extends Component {
-  render () {
+  render() {
     return (
       <div id={this.props.id}>
         <span>{this.props.treePath}</span>
