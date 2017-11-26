@@ -1,6 +1,6 @@
 {
   "name": "react-tree-path",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "React decorator to uniquely identify components in a render tree.",
   "main": "lib/index.js",
   "scripts": {
